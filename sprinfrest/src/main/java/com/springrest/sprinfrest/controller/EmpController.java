@@ -3,9 +3,7 @@ package com.springrest.sprinfrest.controller;
 import com.springrest.sprinfrest.entities.Employee;
 import com.springrest.sprinfrest.services.employeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,5 +25,9 @@ public class EmpController {
     public Employee getEmpplyee(@PathVariable Long empId){
         return this.emp.getEmployee(empId);
 
+    }
+    @PostMapping("/addEmployee")
+    public Employee addEmployee(@RequestBody Employee emp){
+        return this.emp.addEmployee(emp);
     }
 }

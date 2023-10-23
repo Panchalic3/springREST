@@ -31,4 +31,11 @@ public class EmployeeServicdImpl implements employeeService {
         }
         return e;
     }
+
+    @Override
+    public Employee addEmployee(Employee empl) {
+        emp.add(empl);
+        return empl;
+
+    }
 }
