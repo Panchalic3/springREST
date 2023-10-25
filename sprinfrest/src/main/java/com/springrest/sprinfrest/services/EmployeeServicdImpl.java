@@ -10,9 +10,10 @@ public class EmployeeServicdImpl implements employeeService {
     List<Employee> emp;
 
     public EmployeeServicdImpl() {
-       emp=new ArrayList<>();
-       emp.add(new Employee(123,"Panchali"));
-       emp.add(new Employee(111,"Arghya"));
+        emp = new ArrayList<>();
+        emp.add(new Employee(123, "Panchali"));
+        emp.add(new Employee(111, "Arghya"));
+        emp.add(new Employee(7989, "Ral"));
     }
 
     @Override
@@ -21,11 +22,11 @@ public class EmployeeServicdImpl implements employeeService {
     }
 
     @Override
-    public Employee getEmployee(Long empId){
+    public Employee getEmployee(Long empId) {
         Employee e = null;
-        for(Employee employee : emp){
-            if(employee.getID() ==empId){
-                e=employee;
+        for (Employee employee : emp) {
+            if (employee.getID() == empId) {
+                e = employee;
                 break;
             }
         }
@@ -37,5 +38,14 @@ public class EmployeeServicdImpl implements employeeService {
         emp.add(empl);
         return empl;
 
+    }
+
+    @Override
+    public void deleteEmployee(Integer empId) {
+        for (Employee em : emp) {
+            if (em.getID() == empId) {
+                emp.remove(empId);
+            }
+        }
     }
 }
